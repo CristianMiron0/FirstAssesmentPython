@@ -1,0 +1,98 @@
+<!--deportes.html-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Información del deporte</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+</head>
+
+<body>
+    <fieldset>
+        <legend>Información del deporte</legend>
+        <div class="form-group row">
+            {% if deporte %}
+            <p><strong>Nombre:</strong> {{ deporte.nombre }}</p>
+            <p><strong>Jugadores:</strong> {{ deporte.jugadores }}</p>
+            {% if (deporte.Nombre == "Futbol") %}
+            <p><strong>Posicion Portero:</strong> {{ deporte.posicion_portero }}</p>
+            {% elif (deporte.Nombre== "Baloncesto") %}
+            <p><strong>Altura aro:</strong> {{ deporte.altura_aro }}</p>
+            {% elif (deporte.Nombre == "Beisbol") %}
+            <p><strong>Entrada extra:</strong> {{ deporte.entrada_extra }}</p>
+            {% endif %}
+            <p><strong>Descripcion:</strong> {{ deporte.descripcion() }}</p>
+            {% else %}
+            <p>La deporte seleccionada no fue encontrada en la lista.</p>
+            {% endif %}
+            <form method="get" action="/">
+                <button type="submit" class="btn btn-primary">Mas deportes</button>
+            </form>
+        </div>
+    </fieldset>
+</body>
+</html>
+
+<!-- start_deportes.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Información de deportes</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+</head>
+
+<body>
+  <form method="post" action="/deportes">
+    <legend>Información de deportes</legend>
+    <fieldset  class="d-grid" >
+      <label for="deporte">Selecciona una deporte:</label>
+      <select id="deporte" name="deporte" class="col-form-label col-form-label-sm">
+        <option value="Futbol">Futbol</option>
+        <option value="Baloncesto">Baloncesto</option>
+        <option value="Beisbol">Beisbol</option>
+      </select>
+      <label for="jugadores" class="col-form-label col-form-label-sm">Jugadores:</label>
+      <input type="text" id="jugadores" name="jugadores" >
+      <div id="atributos">
+          <label for="posicion_portero" class="col-form-label col-form-label-sm">Posición portero:</label>
+      <input type="text" id="posicion_portero" name="posicion_portero" >
+      </div>
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Revisar</button>
+  </form>
+
+  <script>
+    const deporteselect = document.getElementById("deporte");
+    const atributosDiv = document.getElementById("atributos");
+
+    function mostrarAtributos() {
+      const deporte = deporteselect.value;
+      atributosDiv.innerHTML = "";
+
+      if (deporte === "Futbol") {
+        atributosDiv.innerHTML += `
+ <label for="posicion_portero" class="col-form-label col-form-label-sm">Posición portero:</label>
+      <input type="text" id="posicion_portero" name="posicion_portero" >
+          `;
+      } else if (deporte === "Baloncesto") {
+        atributosDiv.innerHTML += `
+            <label for="altura_aro" class="col-form-label col-form-label-sm">Altura aro:</label>
+            <input type="text" id="altra_aro" name="altura_aro">
+          `;
+      } else if (deporte === "Beisbol") {
+        atributosDiv.innerHTML += `
+            <label for="entrada_extra" class="col-form-label col-form-label-sm">Entrada extra:</label>
+            <input type="text" id="entrada_extra" name="entrada_extra">
+          `;
+      }
+    }
+    deporteselect.addEventListener("change", mostrarAtributos);
+  </script>
+</body>
+
+</html>
