@@ -3,8 +3,7 @@ Este es un repositorio con un examen por Python.
 ## Instrucciones de instalación:
 - Clonar el repositorio:
 
-  - git clone https://github.com/CristianMiron0/ExamPython.git
-
+  - git clone https://github.com/CristianMiron0/FirstAssesmentPython.git
 
 - Crear y activar el entorno virtual:
 
