@@ -71,7 +71,7 @@ Este es un repositorio con un examen por Python.
      - [x] La prueba de los datos con la información dada. Comprobación que el programa funciona interconectando todos sus elementos.
      - [x] La creación del fichero .gitignore que funcione e ignore lo que tiene que ignorar.
      - [x] La creación del repositorio local.
-     - [ ] El subir en el repositorio en GitHub indicado en su cuenta de GitHub en modo público. No deberá tener colaboradores.
+     - [x] El subir en el repositorio en GitHub indicado en su cuenta de GitHub en modo público. No deberá tener colaboradores.
      - [x] Readme.md con las instrucciones para descargar el proyecto y ejecutarlo y observaciones, para el caso de que existan bugs y no haya alcanzado el tiempo para resolverlos.
    
      > **Recuerde** que para iniciar un programa desde cero, debe utilizar la técnica de algoritmación que lo guiará por el camino de la solución.
