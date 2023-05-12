@@ -32,10 +32,6 @@ Este es un repositorio con un examen por Python.
 
   - pip install -r requirements.txt
 
-- Instalar flask
-
-  - pip install flask
-
 - Instrucciones de ejecución
   - py Main.py
 
