@@ -1,0 +1,36 @@
+<!--deportes.html-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Información del deporte</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+</head>
+
+<body>
+    <fieldset>
+        <legend>Información del deporte</legend>
+        <div class="form-group row">
+            {% if deporte %}
+            <p><strong>Nombre:</strong> {{ deporte.nombre }}</p>
+            <p><strong>Jugadores:</strong> {{ deporte.jugadores }}</p>
+            {% if (deporte.Nombre == "Futbol") %}
+            <p><strong>Posicion Portero:</strong> {{ deporte.posicion_portero }}</p>
+            {% elif (deporte.Nombre== "Baloncesto") %}
+            <p><strong>Altura aro:</strong> {{ deporte.altura_aro }}</p>
+            {% elif (deporte.Nombre == "Beisbol") %}
+            <p><strong>Entrada extra:</strong> {{ deporte.entrada_extra }}</p>
+            {% endif %}
+            <p><strong>Descripcion:</strong> {{ deporte.descripcion() }}</p>
+            {% else %}
+            <p>La deporte seleccionada no fue encontrada en la lista.</p>
+            {% endif %}
+            <form method="get" action="/">
+                <button type="submit" class="btn btn-primary">Mas deportes</button>
+            </form>
+        </div>
+    </fieldset>
+</body>
+</html>

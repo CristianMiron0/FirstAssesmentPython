@@ -4,7 +4,7 @@ from clases.deporte import Deportes, Futbol, Baloncesto, Beisbol
 
 app = Flask(__name__, template_folder='html')
 @app.route("/")
-def Deportes():
+def start():
     return render_template('start_deportes.html')
 
 @app.route('/deportes', methods=['GET', 'POST'])
