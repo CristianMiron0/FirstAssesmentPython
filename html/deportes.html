@@ -16,11 +16,11 @@
             {% if deporte %}
             <p><strong>Nombre:</strong> {{ deporte.nombre }}</p>
             <p><strong>Jugadores:</strong> {{ deporte.jugadores }}</p>
-            {% if (deporte.Nombre == "Futbol") %}
+            {% if (deporte.nombre == "Futbol") %}
             <p><strong>Posicion Portero:</strong> {{ deporte.posicion_portero }}</p>
-            {% elif (deporte.Nombre== "Baloncesto") %}
+            {% elif (deporte.nombre== "Baloncesto") %}
             <p><strong>Altura aro:</strong> {{ deporte.altura_aro }}</p>
-            {% elif (deporte.Nombre == "Beisbol") %}
+            {% elif (deporte.nombre == "Beisbol") %}
             <p><strong>Entrada extra:</strong> {{ deporte.entrada_extra }}</p>
             {% endif %}
             <p><strong>Descripcion:</strong> {{ deporte.descripcion() }}</p>
